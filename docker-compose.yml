@@ -58,10 +58,10 @@ services:
         condition: service_healthy
     healthcheck:
       test: "curl --fail http://127.0.0.1:9999/health || exit 1"
-      interval: 10s
-      timeout: 5s
-      retries: 12
-      start_period: 120s
+      interval: 100s
+      timeout: 50s
+      retries: 120
+      start_period: 1200s
     image: appflowyinc/gotrue:${GOTRUE_VERSION:-latest}
     environment:
       # There are a lot of options to configure GoTrue. You can reference the example config:
